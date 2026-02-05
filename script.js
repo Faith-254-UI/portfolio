@@ -1,28 +1,31 @@
-// Simple script to show the current year automatically in footer
+// Footer Year Auto Update
 document.addEventListener("DOMContentLoaded", function () {
-
     const footer = document.querySelector("footer p");
+
     const year = new Date().getFullYear();
 
     footer.innerHTML = "© " + year + " Faith Niva Olesi";
+});
 
-    // Add fade-in animations to all sections
+
+// Scroll Fade-in Animation
+document.addEventListener("DOMContentLoaded", function () {
+
     const sections = document.querySelectorAll("section");
 
     sections.forEach(section => {
         section.classList.add("fade-in");
     });
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
+    window.addEventListener("scroll", () => {
+        sections.forEach(section => {
+            const position = section.getBoundingClientRect().top;
+            const screen = window.innerHeight;
+
+            if (position < screen - 100) {
+                section.classList.add("show");
             }
         });
-    });
-
-    sections.forEach(section => {
-        observer.observe(section);
     });
 
 });
