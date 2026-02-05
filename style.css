@@ -51,12 +51,21 @@ body {
     margin: 5px;
 }
 
-.hero h2 {
-    font-size: 30px;
-}
-
 .highlight {
     color: #7a5fc9;
+}
+
+.typing {
+  border-right: 3px solid;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(20) forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 .btn {
@@ -71,15 +80,21 @@ body {
 
 /* SECTIONS */
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     max-width: 1000px;
     margin: auto;
 }
 
-h2 {
-    color: #0d1117;
-    border-bottom: 2px solid #7a5fc9;
-    padding-bottom: 5px;
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* PROJECT CARDS */
@@ -91,39 +106,9 @@ h2 {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.project a {
-    color: #7a5fc9;
-    font-weight: bold;
-}
-
-/* FOOTER */
 footer {
     text-align: center;
     padding: 15px;
     background-color: #0d1117;
     color: white;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-    .typing {
-  border-right: 3px solid;
-  width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 3s steps(20) forwards;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
 }
