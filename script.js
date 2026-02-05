@@ -1,12 +1,17 @@
+// Simple script to show the current year automatically in footer
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Footer Year
     const footer = document.querySelector("footer p");
     const year = new Date().getFullYear();
+
     footer.innerHTML = "© " + year + " Faith Niva Olesi";
 
-    // Scroll Animations
-    const sections = document.querySelectorAll(".fade-in");
+    // Add fade-in animations to all sections
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+        section.classList.add("fade-in");
+    });
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -19,4 +24,5 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach(section => {
         observer.observe(section);
     });
+
 });
