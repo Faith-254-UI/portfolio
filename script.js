@@ -1,16 +1,12 @@
 // Footer Year Auto Update
 document.addEventListener("DOMContentLoaded", function () {
     const footer = document.querySelector("footer p");
-
     const year = new Date().getFullYear();
-
     footer.innerHTML = "© " + year + " Faith Niva Olesi";
 });
 
-
 // Scroll Fade-in Animation
 document.addEventListener("DOMContentLoaded", function () {
-
     const sections = document.querySelectorAll("section");
 
     sections.forEach(section => {
@@ -27,5 +23,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
 });
